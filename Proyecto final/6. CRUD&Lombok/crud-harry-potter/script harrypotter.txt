@@ -1,0 +1,31 @@
+CREATE USER 'harrypotter'@'localhost' IDENTIFIED BY 'harrypotter';
+GRANT ALL PRIVILEGES ON * . * TO 'harrypotter'@'localhost';
+ALTER USER 'harrypotter'@'localhost' IDENTIFIED WITH mysql_native_password BY 'harrypotter';
+
+
+CREATE DATABASE  IF NOT EXISTS `harrypotter`;
+USE `harrypotter`;
+
+--
+-- Table structure for table `personaje`
+--
+
+DROP TABLE IF EXISTS `personaje`;
+
+CREATE TABLE `personaje` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `house` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+--
+-- Data for table `employee`
+--
+
+INSERT INTO `personaje` VALUES 
+	(1,'Harry','Potter','Gryffindor'),
+	(2,'Ron','Weasley','Gryffindor'),
+	(3,'Hermione','Granger','Gryffindor'),
+	(4,'Draco','Malfoy','Slytherin');
